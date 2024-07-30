@@ -1,0 +1,41 @@
+title: "Mi Portafolio"
+email: "tu-email@example.com"
+description: "Portafolio de un Ingeniero en Ciencias de la Computación."
+baseurl: ""
+url: "https://tu-usuario.github.io"
+
+# Build settings
+theme: minima
+
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
+
+# Idioma por defecto
+defaults:
+  - scope:
+      path: ""
+    values:
+      lang: "es"
+
+languages:
+  en:
+    lang: "en"
+    name: "English"
+  es:
+    lang: "es"
+    name: "Español"
+
+exclude_from_localization:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - _config.yml
+  - _site
+  - node_modules

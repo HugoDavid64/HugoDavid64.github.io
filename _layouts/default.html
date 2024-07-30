@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="{{ page.lang | default: site.lang }}">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ page.title }}</title>
+    <link rel="stylesheet" href="{{ site.baseurl }}/assets/main.css">
+    <script src="{{ site.baseurl }}/assets/language-toggle.js" defer></script>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li class="language-toggle">
+                    <input type="checkbox" id="languageSwitch" class="toggle-input" {% if page.lang=='en' %}checked{%
+                        endif %}>
+                    <label for="languageSwitch" class="toggle-label">
+                        <span class="language-en">EN</span>
+                        <span class="language-es">ES</span>
+                    </label>
+                </li>
+                <li><a
+                        href="{% if page.lang == 'en' %}{{ site.baseurl }}/en/about/{% else %}{{ site.baseurl }}/es/about/{% endif %}">{%
+                        if page.lang == 'en' %}About Me{% else %}Sobre Mí{% endif %}</a></li>
+                <li><a
+                        href="{% if page.lang == 'en' %}{{ site.baseurl }}/en/projects/{% else %}{{ site.baseurl }}/es/projects/{% endif %}">{%
+                        if page.lang == 'en' %}Projects{% else %}Proyectos{% endif %}</a></li>
+                <li><a
+                        href="{% if page.lang == 'en' %}{{ site.baseurl }}/en/contact/{% else %}{{ site.baseurl }}/es/contact/{% endif %}">{%
+                        if page.lang == 'en' %}Contact{% else %}Contacto{% endif %}</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main class="container">
+        {{ content }}
+    </main>
+    <footer>
+        <p>&copy; {{ site.time | date: '%Y' }} Hugo Zhindón</p>
+    </footer>
+</body>
+
+</html>
